@@ -7,25 +7,32 @@
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
-<button onclick="ex05Fn()">ex05함수호출</button>
+<button onclick="ex08Fn()">ex08함수호출</button>
 </body>
 <script>
-  const ex05Fn = () => {
+  const ex08Fn = () => {
     // location.href="ajax-ex-01.html";
-      const val1 = "this is ex05";
+      const val1 = "this is ex08";
       const params ={
           param1: val1,
           param2: "hola~"
       };
     $.ajax({
-      //요청방식 : get
-      //요청주소 : /ex05
-      type : "get",
-      url : "/ex05",
-        data: params,
+      //요청방식 : post
+      //요청주소 : /ex07
+      type : "post",
+      url : "/ex08",
+        data: JSON.stringify(params), //json으로 변환
+        contentType: "application/json", //json으로 날라간다.는 표현
       //요청이 성공했을때 실행되는 부분
       success : function (res){
         console.log("성공",res);
+        console.log(res[0]);
+        console.log(res[1].param1);
+        for(let i in res){
+            console.log("i : ", i);
+            console.log(res[i]);
+        }
       },
       //요청이 실패했을 때 사용되는 부분
       error: function (){

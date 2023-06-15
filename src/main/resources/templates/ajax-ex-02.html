@@ -7,16 +7,16 @@
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
-<button onclick="ex01Fn()">ex01함수호출</button>
+<button onclick="ex02Fn()">ex02함수호출</button>
 </body>
 <script>
-  const ex01Fn = () => {
+  const ex02Fn = () => {
     // location.href="ajax-ex-01.html";
     $.ajax({
-      //요청방식 : get
-      //요청주소 : /ex01
-      type : "get",
-      url : "/ex01",
+      //요청방식 : post
+      //요청주소 : /ex02
+      type : "post",
+      url : "/ex02",
       //요청이 성공했을때 실행되는 부분
       success : function (res){
         console.log("성공",res);
